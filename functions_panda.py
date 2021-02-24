@@ -31,20 +31,21 @@ def average_year(year):
     print(data_year)
     mean_year = data_year.mean()['values']
     result = {}
-    result["year : "] = year
-    result["total : "] = float(mean_year)
+    result["year"] = year
+    result["total"] = float(mean_year)
     return json.dumps(result)
   
   
 def per_capi(country):
-    url = pandas.read_csv('co2.csv', header=2, names=['id', 'Country', 'year', 'emission', 'values', 'footnote', 'source'])
+    url = pandas.read_csv('co2.csv', header=2, names=['id', 'Country', 'year',
+                          'emission', 'values', 'footnote', 'source'])
     capita = url.loc[url['Country'].isin([country])]
-    capita = capita[(capita["emission"] == 'Emissions per capita(metric tons of carbon dioxide)')]
+    capita = capita[(capita["emission"] == 'Emissions per capita(metric tons \
+    of carbon dioxide)')]
     result = {}
     longeur = len(capita)
     for i in range(longeur):
-        result['year :'] = int(capita.iloc[i][2])
-        result['emission :'] = float(capita.iloc[i][4])
+        result[str(capita.iloc[i][2])]=float(capita.iloc[i][4])
     return json.dumps(result)
 
 
