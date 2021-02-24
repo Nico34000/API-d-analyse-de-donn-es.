@@ -20,3 +20,18 @@ def lastest_by_country(convert_country_to_liste):
     res["year"] = int(data_pays.iloc[0][2])
     res["values"] = float(data_pays.iloc[0][4])
     return json.dumps(res)
+
+
+def average_year(year):
+    url = pandas.read_csv('co2.csv', header=2, names=['id', 'Country', 'year',
+                          'emission', 'values', 'footnote', 'source'])
+    data_year = url.loc[url['year'].isin([year])]
+    data_year = data_year[(data_year["emission"] == 'Emissions (thousand metric \
+    tons of carbon dioxide)')]
+    print(data_year)
+    mean_year = data_year.mean()['values']
+    result = {}
+    result["year : "] = year
+    result["total : "] = float(mean_year)
+    return json.dumps(result)
+
