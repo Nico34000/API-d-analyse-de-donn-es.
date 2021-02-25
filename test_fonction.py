@@ -22,5 +22,15 @@ class TestMethods(unittest.TestCase):
         self.assertIsNot({2000}, average_year(1995))
         
         
+    def test_per_capita (self):
+        """ Test la fonction Per_Capita"""
+        self.assertEqual({1975: 2.562, 1985: 3.191, 1995: 2.058, 2005 : 2.22, 2010: 2.604, 2015: 2.342, 2016: 2.422, 2017: 2.283}, per_capi('Cuba'))
+        self.assertIsNotNone({2.058}, per_capi('Cuba'))
+        self.assertIsNotNone({2010}, per_capi('France'))
+        self.assertIsNot({1999}, per_capi('France'))
+        self.assertEqual({ 1975: 1.205, 1985: 1.152, 1995: 1.405, 2005: 1.667, 2010: 1.89, 2015: 2.203, 2016: 2.015, 2017: 2.043}, per_capi('Brazil'))
+        self.assertIsInstance(per_capi('Belgium'), dict)
+        
+        
 if __name__ == '__main__':
     unittest.main()
