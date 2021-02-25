@@ -47,7 +47,7 @@ def per_capita(country):
         return jsonify(per_capi(country))
     elif country.lower() == country:
         app.logger.debug(f"Pays demandé : {country}")
-        return jsonify(latest_by_country(country.capitalize()))
+        return jsonify(per_capi(country.capitalize()))
     else:
         return abort(404)
 
