@@ -34,22 +34,26 @@ def by_country(country):
 def average_for_year(year):
     # on cherche la moyenne des émissions totales au niveau mondial
     # pour une année demandée
+    app.logger.warning(f"Demande de l'annee a l'utilisateur")
     if year in year_list():
-        app.logger.debug(f"Année demandé : {year}")
+        app.logger.debug(f"Annee demande: {year}")
         return jsonify(average_year(year))
     else:
+        app.logger.error(f"Annee demande n'existe pas: {year}")   
         return abort(404)
 
 
 @app.route('/per_capita/<country>')
 def per_capita(country):
+    app.logger.warning(f"Demande du pays a l'utilisateur")    
     if country in country_list():
-        app.logger.debug(f"Pays demandé : {country}")
+        app.logger.debug(f"Pays demande: {country}")
         return jsonify(per_capi(country))
     elif country.lower() == country:
-        app.logger.debug(f"Pays demandé : {country}")
+        app.logger.debug(f"Pays demande: {country}")
         return jsonify(per_capi(country.capitalize()))
     else:
+        app.logger.error(f"Pays demande n'existe pas: {country}")
         return abort(404)
 
 
