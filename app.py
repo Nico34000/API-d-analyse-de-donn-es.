@@ -3,6 +3,7 @@ from flask import Flask, abort, jsonify
 from functions_panda import latest_by_country, average_year, per_capi
 from functions_panda import country_list, year_list
 app = Flask(__name__)
+app.config['JSON_SORT_KEYS'] = False
 
 logging.basicConfig(
     filename='app.log',
