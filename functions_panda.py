@@ -26,9 +26,8 @@ def latest_by_country(country):
 
 
 def year_list():
-    df = csv_file()
-    list_year = set(df['year'].tolist())
-    return list_year
+    year_li = ["2016", "1985", "2017", "1995", "2005", "1975", "2010", "2015"]
+    return year_li
 
 
 def average_year(year):
