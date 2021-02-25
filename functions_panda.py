@@ -22,7 +22,7 @@ def latest_by_country(country):
     result["country"] = str(df.iloc[0][1])
     result["year"] = int(df.iloc[0][2])
     result["emissions"] = float(df.iloc[0][4])
-    return json.dumps(result)
+    return result
 
 
 def year_list():
@@ -40,7 +40,7 @@ def average_year(year):
     result = {}
     result["year"] = year
     result["total"] = float(mean_year)
-    return json.dumps(result)
+    return result
 
 
 def per_capi(country):
@@ -52,4 +52,4 @@ per capita (metric tons of carbon dioxide)')]
     longeur = len(df)
     for i in range(longeur):
         result[int(df.iloc[i][2])] = float(df.iloc[i][4])
-    return json.dumps(result)
+    return result
