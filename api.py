@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
 logging.basicConfig(
-    filename='app_log.log',
+    filename='api_log.log',
     level=logging.ERROR,
     format='%(asctime)s %(levelname)s - %(message)s',
     datefmt='%d/%m/%Y %H:%M:%S',)
@@ -16,6 +16,14 @@ logging.basicConfig(
 
 @app.route('/latest_by_country/<country>')
 def by_country(country):
+    """
+    This function is used when the app.route is released.
+    If the selected contry by the user is in the liste, 
+    we call  the function latest_by_country.
+    If the country isn't in our liste with logger.error
+    we will print a message of error saying that the 
+    selected country doesn't exist.
+    """
     # on veut la valeur la plus récente des emissions
     # totales pour le pays demandé
     app.logger.info("Lancement de la fonction by_country")
@@ -35,6 +43,14 @@ def by_country(country):
 
 @app.route('/average_by_year/<year>')
 def average_for_year(year):
+    """
+    This function is used when the app.route is released.
+    If the year selected from the user is in the year's liste,
+    we call the function average_by_year.
+    If the year choosen isn't in the liste,
+    the function will print an error message saying that
+    the selected year from the user ,doesn't existe.
+    """
     # on cherche la moyenne des émissions totales au niveau mondial
     # pour une année demandée
     app.logger.warning(f"Acces a la route")
@@ -48,6 +64,14 @@ def average_for_year(year):
 
 @app.route('/per_capita/<country>')
 def per_capita(country):
+    """
+    This function is used when app.route is released.
+    If the country selected from the user is in the liste 
+    of countries , we call the function per_capita.
+    If the selected country isn't in our liste ,
+    the function will print an error message saying that
+    the country selected from the user doesn't existe.
+    """
     app.logger.warning(f"Acces a la route")    
     if country in country_list():
         app.logger.debug(f"Route demande: /per_capita{country}")
@@ -62,4 +86,3 @@ def per_capita(country):
 
 if __name__ == "__main__":
     app.run(debug=True)
-
