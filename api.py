@@ -28,7 +28,7 @@ def home():
 def by_country(country):
     """
     This function is used when the app.route is released.
-    If the selected contry by the user is in the liste, 
+    If the selected contry by the user is in the liste 
     we call  the function latest_by_country.
     If the country isn't in our liste with logger.error
     we will print a message of error saying that the 
