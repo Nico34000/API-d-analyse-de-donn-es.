@@ -9,7 +9,9 @@ Pour pouvoir lancer l'application vous devez télécharger tout les fichiers con
 Vous allez pouvoir lancer via le script bat : "autorun_test_api.bat" et sur les instructions.
 Tout fonctionne bien ? Parfait vous allez donc pouvoir effectuer vos rêquetes en changeant la route de l'adresse : 
 Exemple : http://127.0.0.1:5000/latest_by_country/France
+
 Exemple : http://127.0.0.1:5000/average_by_year/2016
+
 Exemple : http://127.0.0.1:5000/per_capita/Albania
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
