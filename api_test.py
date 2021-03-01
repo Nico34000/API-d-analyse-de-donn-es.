@@ -28,20 +28,13 @@ class TestApiFlask(unittest.TestCase):
         self.assertEqual(result.status_code, 200) 
         self.assertTrue(b'year' in result.data)
         self.assertEqual(result.content_type,'application/json')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
+        
+     def test_per_capita(self):    
+         result = self.app.get('/per_capita/Cuba')
+         self.assertEqual(result.status_code, 200) 
+         self.assertTrue(b'1985' in result.data)
+         self.assertEqual(result.content_type,'application/json')
 
 
 
