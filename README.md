@@ -6,7 +6,7 @@ Les émissions de CO2 pour les pays sont disponibles sur un fichier csv fournit 
 pour obtenir le resultat voulu , on tape le localhost et on lance chaque requête  pour voir le résultat
 
 Pour pouvoir lancer l'application vous devez télécharger tout les fichiers contenu dans le repo.
-Vous allez pouvoir lancer via le script bat : "autorun_test_api.bat" et sur les instructions.
+Vous allez pouvoir lancer via le script bat : "autorun_test_api.bat" et suivre les instructions.
 Tout fonctionne bien ? Parfait vous allez donc pouvoir effectuer vos rêquetes en changeant la route de l'adresse : 
 
 Exemple : http://127.0.0.1:5000/latest_by_country/France
