@@ -23,7 +23,11 @@ class TestApiFlask(unittest.TestCase):
         self.assertEqual(result_2.status_code, 404)
 
 
-
+    def test_average_by_year(self):
+        result = self.app.get("/average_by_year/2016")
+        self.assertEqual(result.status_code, 200) 
+        self.assertTrue(b'year' in result.data)
+        self.assertEqual(result.content_type,'application/json')
 
 
 
