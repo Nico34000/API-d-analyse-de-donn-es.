@@ -61,7 +61,7 @@ def average_for_year(year):
     This function is used when the app.route is released.
     If the year selected from the user is in the year's liste,
     we call the function average_by_year.
-    If the year choosen isn't in the liste,
+    If the year choosen isn't in the liste
     the function will print an error message saying that
     the selected year from the user ,doesn't existe.
     """
