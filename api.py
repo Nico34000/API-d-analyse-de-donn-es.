@@ -12,6 +12,10 @@ logging.basicConfig(
     datefmt='%d/%m/%Y %H:%M:%S',)
 
 
+@app.route('/')
+def home():
+    app.logger.debug(f"Acces a la route index /")
+    return "Hello"
 
 
 @app.route('/latest_by_country/<country>')
