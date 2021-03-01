@@ -44,8 +44,12 @@ def by_country(country):
         app.logger.debug(f"Operation reussi: {country}")
     elif country.lower() == country:
         app.logger.debug(f"route demande: latest_by_country/ {country}")
-        return jsonify(latest_by_country(country.capitalize()))
-        app.logger.debug(f"Operation reussi: {country}")
+        try:
+            return jsonify(latest_by_country(country.capitalize()))
+        except:
+            app.logger.error(f"la route demande n'existe pas: {country}")
+            return abort(404)
+            
     else:
         app.logger.error(f"la route demande n'existe pas: {country}")
         return abort(404)
@@ -87,8 +91,13 @@ def per_capita(country):
         app.logger.debug(f"Route demande: /per_capita{country}")
         return jsonify(per_capi(country))
     elif country.lower() == country:
-        app.logger.debug(f"route demande: /per_capita {country}")
-        return jsonify(per_capi(country.capitalize()))
+        app.logger.debug(f"route demande: latest_by_country/ {country}")
+        try:
+            return jsonify(latest_by_country(country.capitalize()))
+        except:
+            app.logger.error(f"la route demande n'existe pas: {country}")
+            return abort(404)
+            
     else:
         app.logger.error(f"La route demande n'existe pas: {country}")
         return abort(404)
