@@ -20,7 +20,7 @@ log.addHandler(handler)
 
 @app.route('/')
 def home():
-    app.logger.debug(f"Acces a la route index /")
+    app.logger.debug("Acces a la route index /")
     return "Hello"
 
 
@@ -28,16 +28,16 @@ def home():
 def by_country(country):
     """
     This function is used when the app.route is released.
-    If the selected contry by the user is in the liste 
+    If the selected contry by the user is in the liste
     we call  the function latest_by_country
     If the country isn't in our liste with logger.error
-    we will print a message of error saying that the 
+    we will print a message of error saying that the
     selected country doesn't exist.
     """
     # on veut la valeur la plus récente des emissions
     # totales pour le pays demandé
     app.logger.info("Lancement de la fonction by_country")
-    app.logger.warning(f"Acces a la route: latest_by_country/")
+    app.logger.warning("Acces a la route: latest_by_country/")
     if country in country_list():
         app.logger.debug(f"route demande: latest_by_country/ {country}")
         return jsonify(latest_by_country(country))
@@ -49,7 +49,6 @@ def by_country(country):
         except:
             app.logger.error(f"la route demande n'existe pas: {country}")
             return abort(404)
-            
     else:
         app.logger.error(f"la route demande n'existe pas: {country}")
         return abort(404)
@@ -61,18 +60,18 @@ def average_for_year(year):
     This function is used when the app.route is released.
     If the year selected from the user is in the year's liste,
     we call the function average_by_year.
-    If the year choosen isn't in the liste
+    If the year choosen isn't in the liste,
     the function will print an error message saying that
     the selected year from the user ,doesn't existe.
     """
     # on cherche la moyenne des émissions totales au niveau mondial
     # pour une année demandée
-    app.logger.warning(f"Acces a la route")
+    app.logger.warning("Acces a la route")
     if year in year_list():
         app.logger.debug(f"route demande :/average_by_year/ {year}")
         return jsonify(average_year(year))
     else:
-        app.logger.error(f"la route demande n'existe pas: {year}")   
+        app.logger.error(f"la route demande n'existe pas: {year}")
         return abort(404)
 
 
@@ -80,13 +79,13 @@ def average_for_year(year):
 def per_capita(country):
     """
     This function is used when app.route is released.
-    If the country selected from the user is in the liste 
+    If the country selected from the user is in the liste
     of countries , we call the function per_capita.
     If the selected country isn't in our liste ,
     the function will print an error message saying that
     the country selected from the user doesn't existe.
     """
-    app.logger.warning(f"Acces a la route")    
+    app.logger.warning("Acces a la route")
     if country in country_list():
         app.logger.debug(f"Route demande: /per_capita{country}")
         return jsonify(per_capi(country))
@@ -97,7 +96,6 @@ def per_capita(country):
         except:
             app.logger.error(f"la route demande n'existe pas: {country}")
             return abort(404)
-            
     else:
         app.logger.error(f"La route demande n'existe pas: {country}")
         return abort(404)
