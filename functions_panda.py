@@ -3,7 +3,7 @@ import pandas
 #github-action genshdoc
 def csv_file():
     """
-    This function contains data from csv file. \n
+    This function contains datas from csv file. \n
     She return : 'id', 'Country', 'year',
     'emission', 'values', 'footnote', 'source'.
     """
