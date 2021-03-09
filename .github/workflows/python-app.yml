@@ -40,4 +40,4 @@ jobs:
         pytest api_test.py
     - name: auto pdoc
       run: |
-        pdoc3 --html --Documentation functions_panda
+        pdoc3 --html -o Documentation functions_panda
