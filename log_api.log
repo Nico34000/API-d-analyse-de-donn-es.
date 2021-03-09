@@ -3,3 +3,8 @@
 [2021-03-09 12:51:30,745] WARNING - Acces a la route: latest_by_country/
 [2021-03-09 12:51:30,752] ERROR - la route demande n'existe pas: Aania
 [2021-03-09 12:51:30,757] WARNING - Acces a la route
+[2021-03-09 13:46:05,917] WARNING - Acces a la route
+[2021-03-09 13:46:05,938] WARNING - Acces a la route: latest_by_country/
+[2021-03-09 13:46:05,955] WARNING - Acces a la route: latest_by_country/
+[2021-03-09 13:46:05,962] ERROR - la route demande n'existe pas: Aania
+[2021-03-09 13:46:05,966] WARNING - Acces a la route
