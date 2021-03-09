@@ -26,7 +26,6 @@ jobs:
         pip install flake8 pytest
         pip install pandas
         pip install flask
-        pip install pdoc3
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -38,6 +37,4 @@ jobs:
       run: |
         pytest test_fonction.py
         pytest api_test.py
-    - name: Pdoc auto generate
-      run: |
-        pdoc3 --html
+
